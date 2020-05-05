@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-import pickle
+import dill
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
@@ -22,7 +22,7 @@ df['model'] = le.transform(df['name'])
 app = Flask(__name__, template_folder='templates')
 #-------- MODEL GOES HERE -----------#
 
-pipe = pickle.load(open("pipe.pkl", 'rb'))
+pipe = dill.load(open("pipe.pkl", 'rb'))
 
 #-------- ROUTES GO HERE -----------#
 

@@ -11,8 +11,8 @@ pandas = "*"
 sklearn-pandas = "*"
 flask = "*"
 gunicorn = "*"
-pickle = "*"
 catboost = "*"
+dill = "*"
 
 [requires]
 python_version = "3.7"

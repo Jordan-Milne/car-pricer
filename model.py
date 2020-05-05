@@ -1,4 +1,4 @@
-import pickle
+import dill
 
 import catboost as cb
 import pandas as pd
@@ -81,8 +81,8 @@ model.fit(Z_train,y_train)
 print(model.score(Z_train,y_train))
 print(model.score(Z_test, y_test))
 
-# # pipe and pickle
-# pipe = make_pipeline(mapper, model)
-# pipe.fit(X_train, y_train)
-# pipe.score(X_test, y_test)
-# pickle.dump(pipe, open('pipe.pkl', 'wb'))
+# pipe and pickle
+pipe = make_pipeline(mapper, model)
+pipe.fit(X_train, y_train)
+pipe.score(X_test, y_test)
+dill.dump(pipe, open('pipe.pkl', 'wb'))
