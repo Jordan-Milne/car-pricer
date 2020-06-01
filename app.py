@@ -31,7 +31,7 @@ def index():
     return render_template('indexx.html')
 
 @app.route('/result', methods=['POST'])
-def predict_price():
+def predict_price(): 
     args = request.form
     print(args)
     data = pd.DataFrame({
